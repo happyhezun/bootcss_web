@@ -39,6 +39,11 @@ def regis(request):
             data = form.cleaned_data
             username = data['username']
             password = data['password']
+            #验证用户是否已经存在。
+            result = UserProfile.objects.filter(UserName=username).count()
+            if result == 1:
+                return HttpResponse('你已经注册， 不能重复注册。')
+            #数据入库
             UserProfile.objects.create(UserName=username, PassWord=password)
             #print username, password
             return HttpResponse('注册成功')
