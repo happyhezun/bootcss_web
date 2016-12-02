@@ -1,0 +1,14 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<title>用户注册</title>
+</head>
+<body>
+	<form method='post' action='/regis'>{% csrf_token %}
+		<table>
+			{{ form.as_table }}
+		</table>
+		<input type='submit' value='注册'>
+	</form>
+</body>
+</html>

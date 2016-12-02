@@ -1,0 +1,41 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<title>Login us</title>
+<style type="text/css">
+    ul.errorlist {
+        margin: 0;
+        padding: 0;
+    }
+    .errorlist li {
+        #background-color: red;
+        color: red;
+        display: block;
+        font-size: 10px;
+        margin: 0 0 3px;
+        padding: 4px 5px;
+    }
+</style>
+</head>
+<body>
+	<h1>Login us</h1>
+
+
+
+    <form action="" method="post"> {% csrf_token %}
+        <div class="field">
+            {{ form.username.errors }}
+            <label for="id_username">username:</label>
+            {{ form.username }}
+        </div>
+        <div class="field">
+            {{ form.password.errors }}
+            <label for="id_password">password:</label>
+            {{ form.password }}
+        </div>
+
+        <input type="submit" value="Submit">
+    </form>
+	
+</body>
+</html>
