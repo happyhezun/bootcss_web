@@ -9,8 +9,12 @@ urlpatterns = [
 
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', index),
-    url(r'^UserList$',UserList),
     url(r'^Login$', Login),
-    url(r'^testPage',testPage),
     url(r'^regis', regis),
+    url(r'^UserList$',UserList),
+    url(r'^UserDetail/(?P<uid>(\d+))/$', UserDetail),
+    #url(r'^Edit/(?P<uid>(\d+))/$', edit),
+    url(r'^Delete/(?P<uid>(\d+))/$',Delete),   
+    url(r'^testPage',testPage),
+
 ]

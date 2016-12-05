@@ -9,11 +9,11 @@
 	<a href='/regis'> 注册用户 </a>
 	<div>
 		{% for value in users %}
-			{{ value.id }}
-			{{ value.UserName }}
+			<h1 style='display:None'>{{ value.id }}</h1>
+			<a href='/UserDetail/{{ value.id }}'>{{ value.UserName }}</a>			
 			{{ value.PassWord }}
-			<a href='/edit/{{ value.id }}'>修改</a>
-			<a href='/del/{{ value.id }}'>删除</a>
+			<a href='/Edit/{{ value.id }}'>修改</a>
+			<a href='/Delete/{{ value.id }}'>删除</a>
 			<br/>
 		{% endfor %}
 	</div>

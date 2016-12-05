@@ -51,12 +51,18 @@ def regis(request):
         form = Regis()
     return render_to_response('regis.html',{'form':form}, context_instance=RequestContext(request))
 
-def edit(request, id):
-    id= int(id)
-    users = UserProfile.objects.filter(id=id)
-    return render_to_response('edit.html',{'form':users})
-    pass
+  
 
+def UserDetail(request,uid):
+    uid = int(uid)
+    user = UserProfile.objects.get(id=uid)
+    print type(user)
+    return render_to_response('userdetail.html', {'user':user})
+
+
+def Delete(request,uid):
+    UserProfile.objects.filter(id=uid).delete()
+    return redirect('/')
 def testPage(request):
     return render_to_response('demo.html')
 
